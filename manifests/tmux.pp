@@ -1,4 +1,4 @@
-class tmux {
+class flameeyes::tmux {
   case $::osfamily {
     default: {
       case $::operatingsystem {
