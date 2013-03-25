@@ -1,5 +1,8 @@
 class flameeyes::tmux {
   case $::osfamily {
+    'RedHat': {
+      $package = "tmux"
+    }
     default: {
       case $::operatingsystem {
         "Gentoo": {
