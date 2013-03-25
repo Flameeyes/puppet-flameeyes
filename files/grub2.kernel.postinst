@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cp /boot/grub2/grub.cfg /boot/grub2/grub.cfg.bak
+grub2-mkconfig -o /boot/grub2/grub.cfg
