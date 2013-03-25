@@ -19,10 +19,14 @@ class flameeyes::puppet($master = false) {
             use => 'old-output'
           }
 
-          if !$master {
-            package_use { 'app-admin/puppet':
-              use => [ 'minimal' ]
-            }
+          if $master {
+            $master_use = []
+          } else {
+            $master_use = [ 'minimal' ]
+          }
+
+          package_use { 'app-admin/puppet':
+            use => [ 'shadow', $master_use ]
           }
 
           $package = "app-admin/puppet"
