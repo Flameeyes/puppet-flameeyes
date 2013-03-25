@@ -1,4 +1,4 @@
-class flameeyes::puppet {
+class flameeyes::puppet($master = false) {
   case $::osfamily {
     'RedHat': {
       $package = 'puppet'
@@ -19,6 +19,12 @@ class flameeyes::puppet {
             use => 'old-output'
           }
 
+          if !$master {
+            package_use { 'app-admin/puppet':
+              use => [ 'minimal' ]
+            }
+          }
+
           $package = "app-admin/puppet"
         }
       }
@@ -33,5 +39,13 @@ class flameeyes::puppet {
     subscribe => Package[$package],
     ensure => running,
     enable => true,
+  }
+
+  if $master {
+    service { 'puppetmaster':
+      subscribe => Package[$package],
+      ensure => running.
+      enable => true,
+    }
   }
 }
