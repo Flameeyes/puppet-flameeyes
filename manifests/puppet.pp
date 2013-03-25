@@ -44,7 +44,7 @@ class flameeyes::puppet($master = false) {
   if $master {
     service { 'puppetmaster':
       subscribe => Package[$package],
-      ensure => running.
+      ensure => running,
       enable => true,
     }
   }
