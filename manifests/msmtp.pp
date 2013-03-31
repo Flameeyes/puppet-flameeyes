@@ -18,6 +18,6 @@ class flameeyes::msmtp($relayhost, $fromaddress = '', $aliases = '/etc/aliases')
     require => Package['msmtp'],
     ensure => file,
     mode => '0755',
-    content => template("${module_name}/msmtprc.erb",
+    content => template("${module_name}/msmtprc.erb"),
   }
 }
