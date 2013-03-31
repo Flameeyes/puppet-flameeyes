@@ -5,7 +5,7 @@ class flameeyes::msmtp($relayhost, $fromaddress = '', $aliases = '/etc/aliases')
       alias => "msmtp"
     }
   } else {
-    fail("The ${module_name} module is not supported on ${::osfamily}/${::operatingsystem}");
+    fail("The ${module_name} module is not supported on ${::osfamily}/${::operatingsystem}")
   }
 
   if $fromaddress == '' {

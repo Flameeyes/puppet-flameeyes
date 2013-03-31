@@ -6,4 +6,7 @@ auto_from off
 from <%= from %>
 
 syslog LOG_MAIL
+
+<% if aliases != '' -%>
 aliases <%= aliases %>
+<% end -%>
