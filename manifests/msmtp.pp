@@ -1,8 +1,9 @@
 class flameeyes::msmtp($relayhost, $fromaddress = '', $aliases = '/etc/aliases') {
   if $::operatingsystem == "Gentoo" {
+    $package = "mail-mta/msmtp"
+
     portage::package { "mail-mta/msmtp":
       use => [mta],
-      alias => "msmtp"
     }
   } else {
     fail("The ${module_name} module is not supported on ${::osfamily}/${::operatingsystem}")
@@ -15,7 +16,7 @@ class flameeyes::msmtp($relayhost, $fromaddress = '', $aliases = '/etc/aliases')
   }
 
   file { '/etc/msmtprc':
-    require => Package['msmtp'],
+    require => Package[$package],
     ensure => file,
     mode => '0755',
     content => template("${module_name}/msmtprc.erb"),
