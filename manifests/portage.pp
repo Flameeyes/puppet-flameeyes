@@ -30,7 +30,7 @@ class flameeyes::portage (
     }
 
     $makeconf = {
-      'use'     => { content => $use,
+      'use'     => { content => $use, },
       'cflags'  => { content => $cflags },
       'cxxflags'=> { content => $cxxflags },
       'features'=> { content => "userpriv usersandbox parallel-fetch splitdebug split-logs ${extra_features}" },
