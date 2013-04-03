@@ -30,21 +30,22 @@ class flameeyes::portage (
     }
 
     $makeconf = {
-      'cflags'  => { content => "${cflags}" },
-      'cxxflags'=> { content => "${cxxflags}" },
+      'use'     => { content => $use,
+      'cflags'  => { content => $cflags },
+      'cxxflags'=> { content => $cxxflags },
       'features'=> { content => "userpriv usersandbox parallel-fetch splitdebug split-logs ${extra_features}" },
       'EMERGE_DEFAULT_OPTS' => { content => "--quiet-build --keep-going ${extra_emerge_options}" },
-      'makeopts'=> { content => "${makeopts}" },
-      'sync'    => { content => "${sync}" },
-      'GENTOO_MIRRORS' => { content => "$mirrors" },
+      'makeopts'=> { content => $makeopts },
+      'sync'    => { content => $sync },
+      'GENTOO_MIRRORS' => { content => $mirrors },
       'portdir' => { content => "/var/cache/portage/tree" },
       'distdir' => { content => "/var/cache/portage/distfiles" },
       'pkgdir'  => { content => "/var/spool/portage/packages" },
       'chost'   => { content => "${real_chost}" },
       'PORTAGE_COMPRESS' => { content => "xz" },
       'LINGUAS' => { content => "en" },
-      'PYTHON_TARGETS' => { content => "${python_targets}" },
-      'RUBY_TARGETS' => { content => "${ruby_targets}" },
+      'PYTHON_TARGETS' => { content => $python_targets },
+      'RUBY_TARGETS' => { content => $ruby_targets },
     }
 
     # these are optional
