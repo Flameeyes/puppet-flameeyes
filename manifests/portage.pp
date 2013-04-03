@@ -33,7 +33,7 @@ class flameeyes::portage (
       'use'     => { content => $use, },
       'cflags'  => { content => $cflags },
       'cxxflags'=> { content => $cxxflags },
-      'features'=> { content => "userpriv usersandbox parallel-fetch splitdebug split-logs ${extra_features}" },
+      'features'=> { content => "userpriv usersandbox parallel-fetch splitdebug split-log ${extra_features}" },
       'EMERGE_DEFAULT_OPTS' => { content => "--quiet-build --keep-going ${extra_emerge_options}" },
       'makeopts'=> { content => $makeopts },
       'sync'    => { content => $sync },
