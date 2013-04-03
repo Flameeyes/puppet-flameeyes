@@ -63,9 +63,9 @@ class flameeyes::portage (
     }
 
     $packageuses = {
-      'app-arch/tarsnap': { use => [ 'lzma' ] },
-      'sys-libs/pam': { use => [ '-berkdb' ] },
-      'sys-fs/lvm2': { use => [ '-lvm1', '-thin' ] },
+      'app-arch/tarsnap' => { use => [ 'lzma' ] },
+      'sys-libs/pam' => { use => [ '-berkdb' ] },
+      'sys-fs/lvm2' => { use => [ '-lvm1', '-thin' ] },
     }
 
     create_resources('portage::makeconf', $makeconf, { ensure => 'present' })
