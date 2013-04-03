@@ -18,7 +18,7 @@ class flameeyes::portage (
     if $chost == '' {
       $real_chost = $::hardwaremodel ? {
         x86_64 => "x86_64-pc-linux-gnu",
-        i686   => "i686-pc-linux-gnu"
+        i686   => "i686-pc-linux-gnu",
         default => ''
       }
 
