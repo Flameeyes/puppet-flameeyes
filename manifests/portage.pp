@@ -8,8 +8,8 @@ class flameeyes::portage (
   $extra_emerge_options = '',
   $sync = "rsync://rsync.gentoo.org/gentoo-portage",
   $mirrors = '',
-  $python_targets => "python2_7",
-  $ruby_targets => "ruby19",
+  $python_targets = "python2_7",
+  $ruby_targets = "ruby19",
   $log = true,
   $profile
   ) {
