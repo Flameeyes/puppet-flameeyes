@@ -1,4 +1,4 @@
-class flameeyes:portage (
+class flameeyes::portage (
   $use,
   $cflags = '-pipe -O2 -march=native -ggdb',
   $cxxflags = '${CFLAGS}',
